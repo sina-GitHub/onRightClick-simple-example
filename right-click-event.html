@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1 id="click">click here</h1>
+		<h1 id="click2">click here2</h1>
+		<script>
+			const clicker = document.getElementById('click');
+			const clicker2 = document.getElementById('click2');
+
+			clicker.addEventListener('mousedown', function (e) {
+				if (e.which == 3) {
+					alert('Right mouse button clicked on element');
+				}
+
+				//return false; doesn't work for canceling default menu
+			});
+
+			clicker2.oncontextmenu = function () {
+				alert('Right Click');
+
+				return false; // cancel default menu
+			};
+		</script>
+	</body>
+</html>
